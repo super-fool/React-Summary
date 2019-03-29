@@ -10,6 +10,23 @@ React has been designed from **the start for gradual adoption.**
 
 ---
 
+# react
+
+## JSX
+
+JSX也是一个表达式，编译后变成一个函数调用并执行后成为一个对象。
+
+你可以将JSX作为**参数，变量，返回对象**
+
+JSX判断字符串和JS表达式
+```js
+// 字符串可以用引号，对象可以用{}.
+const ele = <h1 data-name="name" src={user.avatarUrl}></h1>
+// 这里的JSX和Vue的区别：Vue是通过v-bind进行辨别，而react是通过花括号 curly braces。
+```
+
+---
+
 # create-react-app: single page app
 
 不能删的两个文件：
