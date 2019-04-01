@@ -27,6 +27,39 @@ const ele = <h1 data-name="name" src={user.avatarUrl}></h1>
 
 JSX可以防止**Injection Attacks**
 
+Babel编译JSX时，会调用`React.createElement()`.
+`React.createElement()`performs a few checks to help you write bug-free code but essentially it creates an object.
+```js
+const ele = (
+  <div className="container">
+    <h1>Hello React</h1>
+  </div>
+);
+// equal to
+const ele = React.createElement(
+  'div',
+  {className: 'container'},
+  React.createElement(
+    'h1',
+    null,
+    'Hello React'
+  )
+);
+// React.createElement 解析：
+const ele = {
+  type: 'div',
+  props: {
+    className: 'container',
+    children: {
+      type: 'h1',
+      props: {
+        chidren: 'Hello React'
+      }
+    }
+  },
+}
+// React use the object to construct the DOM and keep it up to date.
+```
 ---
 
 # create-react-app: single page app
