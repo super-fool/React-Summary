@@ -25,6 +25,8 @@ const ele = <h1 data-name="name" src={user.avatarUrl}></h1>
 // 这里的JSX和Vue的区别：Vue是通过v-bind进行辨别，而react是通过花括号 curly braces。
 ```
 
+JSX可以防止**Injection Attacks**
+
 ---
 
 # create-react-app: single page app
